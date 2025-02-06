@@ -11,82 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <!-- Chart.js (إذا دعت الحاجة) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-<style>
-    :root {
-      --primary-color: #3D2C2E; /* بني ملكي */
-      --secondary-color: #1A1A1D; /* أسود داكن */
-      --accent-color: #C9A66B; /* ذهبي فخم */
-      --bg-color: #F5F0E1; /* بيج فاتح */
-      --section-bg: linear-gradient(135deg, #D8C3A5, #A68B6D); /* بيج ذهبي */
-      --section-border: var(--accent-color);
-      --text-color: #3D2C2E; /* بني راقٍ */
-      --input-bg: #EDE0D4; /* بيج فاتح */
-      --animation-speed: 0.8s;
-    }
-
-    body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Cairo', sans-serif;
-    }
-
-    .container {
-      background: var(--section-bg);
-      border: 3px solid var(--accent-color);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    }
-
-    .header {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: #fff;
-      border-bottom: 5px solid var(--accent-color);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    }
-
-    .header h1, .header h2 {
-      color: var(--accent-color);
-    }
-
-    .section {
-      background: var(--section-bg);
-      border: 2px solid var(--accent-color);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .section-title {
-      color: var(--accent-color);
-      border-bottom: 3px solid var(--accent-color);
-    }
-
-    .input-group label {
-      color: var(--primary-color);
-    }
-
-    input, select, textarea {
-      background: var(--input-bg);
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-
-    .btn {
-      background: var(--primary-color);
-      border: 2px solid var(--accent-color);
-      color: #fff;
-    }
-
-    .btn:hover {
-      background: var(--secondary-color);
-    }
-
-    .footer {
-      background: var(--primary-color);
-      border-top: 5px solid var(--accent-color);
-      color: #fff;
-    }
-
-</style>
-<style>
+  <style>
     /* إعدادات الألوان والخطوط – ألوان داكنة فاخرة */
     :root {
       --primary-color: #1B2631;
@@ -135,9 +60,9 @@
       max-width: 1400px;
       margin: 40px auto;
       padding: 30px;
-      background: var(--section-bg);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
       position: relative;
       overflow: hidden;
     }
@@ -630,22 +555,44 @@
       </div>
     </div>
     
+    
     <!-- البيانات الأساسية -->
     <div class="section">
-      <div class="section-title">
+      <div class="section-title" style="color: #F1C40F;">
         <i class="fas fa-building"></i>
         <h2>البيانات الأساسية</h2>
       </div>
       <div class="input-group">
-        <label>اسم الشركة/المؤسسة:</label>
+        <label style="color: #F1C40F;">اسم الشركة/المؤسسة:</label>
         <input type="text" id="companyName" placeholder="أدخل اسم الشركة" required>
       </div>
       <div class="input-group">
-        <label>اسم المقاول المسؤول:</label>
+        <label style="color: #F1C40F;">اسم المقاول المسؤول:</label>
         <input type="text" id="contractorName" placeholder="أدخل اسم المقاول" required>
       </div>
-      <div class="input-group">
-        <label>رقم الهاتف:</label>
+      
+    <div class="input-group">
+      <label style="color: #F1C40F;">رقم السجل التجاري:</label>
+      <input type="text" id="businessRegNumber" placeholder="أدخل رقم السجل التجاري">
+    </div>
+    <div class="input-group">
+      <label style="color: #F1C40F;">نوع النشاط / التخصص:</label>
+      <input type="text" id="businessType" placeholder="أدخل نوع النشاط أو التخصص">
+    </div>
+    <div class="input-group">
+      <label style="color: #F1C40F;">تصنيف الشركة:</label>
+      <input type="text" id="companyClassification" placeholder="أدخل تصنيف الشركة إن وجد">
+    </div>
+    <div class="input-group">
+      <label style="color: #F1C40F;">حجم الشركة:</label>
+      <select id="companySize">
+        <option value="small">شركة صغيرة</option>
+        <option value="medium">شركة متوسطة</option>
+        <option value="large">شركة كبيرة</option>
+      </select>
+    </div>
+<div class="input-group">
+        <label style="color: #F1C40F;">رقم الهاتف:</label>
         <input type="tel" id="phoneNumber" placeholder="أدخل رقم الهاتف" required>
       </div>
     </div>
@@ -1677,7 +1624,7 @@
       <p>© 2025 الاتحاد العام للمقاولين اليمنيين. جميع الحقوق محفوظة.</p>
     </div>
   
-  
+ 
   <script>
     'use strict';
     const { jsPDF } = window.jspdf;
